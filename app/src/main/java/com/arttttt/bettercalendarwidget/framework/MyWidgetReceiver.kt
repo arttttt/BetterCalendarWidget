@@ -2,10 +2,9 @@ package com.arttttt.bettercalendarwidget.framework
 
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
-import com.arttttt.bettercalendarwidget.ui.widget.MyAppWidget
+import com.arttttt.bettercalendarwidget.ui.widget.SmallCalendarWidget
 
-class MyAppWidgetReceiver : GlanceAppWidgetReceiver() {
+class SmallCalendarWidgetReceiver : GlanceAppWidgetReceiver() {
 
-    // Let MyAppWidgetReceiver know which GlanceAppWidget to use
-    override val glanceAppWidget: GlanceAppWidget = MyAppWidget()
+    override val glanceAppWidget: GlanceAppWidget = SmallCalendarWidget()
 }
