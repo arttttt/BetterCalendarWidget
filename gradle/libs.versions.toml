@@ -7,6 +7,8 @@ activityCompose = "1.9.1"
 composeBom = "2024.06.00"
 glance = "1.1.0"
 dagger2 = "2.52"
+essenty = "2.1.0"
+mviKotlin = "4.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -22,6 +24,16 @@ androidx-glance-appwidget = { group = "androidx.glance", name = "glance-appwidge
 androidx-glance-material3 = { group = "androidx.glance", name = "glance-material3", version.ref = "glance" }
 google-dagger2-lib = { module = "com.google.dagger:dagger", version.ref = "dagger2" }
 google-dagger2-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger2" }
+arkivanov-essenty-lifecycle-lib = { group = "com.arkivanov.essenty", name = "lifecycle", version.ref = "essenty" }
+arkivanov-essenty-lifecycle-coroutines = { group = "com.arkivanov.essenty", name = "lifecycle-coroutines", version.ref = "essenty" }
+arkivanov-essenty-stateKeeper = { group = "com.arkivanov.essenty", name = "state-keeper", version.ref = "essenty" }
+arkivanov-essenty-instanceKeeper = { group = "com.arkivanov.essenty", name = "instance-keeper", version.ref = "essenty" }
+arkivanov-essenty-backHandler = { group = "com.arkivanov.essenty", name = "back-handler", version.ref = "essenty" }
+arkivanov-mviKotlin-core = { group = "com.arkivanov.mvikotlin", name = "mvikotlin", version.ref = "mviKotlin" }
+arkivanov-mviKotlin-main = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-main", version.ref = "mviKotlin" }
+arkivanov-mviKotlin-logging = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-logging", version.ref = "mviKotlin" }
+arkivanov-mviKotlin-timetravel = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-timetravel", version.ref = "mviKotlin" }
+arkivanov-mviKotlin-coroutines = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-extensions-coroutines", version.ref = "mviKotlin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

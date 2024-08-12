@@ -26,13 +26,16 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
     }
@@ -54,4 +57,15 @@ dependencies {
 
     implementation(libs.google.dagger2.lib)
     kapt(libs.google.dagger2.compiler)
+
+    implementation(libs.arkivanov.essenty.lifecycle.lib)
+    implementation(libs.arkivanov.essenty.lifecycle.coroutines)
+    implementation(libs.arkivanov.essenty.backHandler)
+    implementation(libs.arkivanov.essenty.stateKeeper)
+    implementation(libs.arkivanov.essenty.instanceKeeper)
+    implementation(libs.arkivanov.mviKotlin.core)
+    implementation(libs.arkivanov.mviKotlin.coroutines)
+    implementation(libs.arkivanov.mviKotlin.main)
+    implementation(libs.arkivanov.mviKotlin.logging)
+    implementation(libs.arkivanov.mviKotlin.timetravel)
 }
