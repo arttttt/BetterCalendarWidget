@@ -52,6 +52,9 @@ dependencies {
     implementation(libs.androidx.material3)
     debugImplementation(libs.androidx.ui.tooling)
 
+    implementation(libs.kotlin.coroutines.core)
+    implementation(libs.kotlin.coroutines.android)
+
     implementation(libs.androidx.glance.appwidget)
     implementation(libs.androidx.glance.material3)
 
