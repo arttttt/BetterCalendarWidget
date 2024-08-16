@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "BetterCalendarWidget"
 include(":app")
+include(":core:arch")
