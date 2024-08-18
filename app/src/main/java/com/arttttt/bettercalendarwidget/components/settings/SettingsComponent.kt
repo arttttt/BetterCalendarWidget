@@ -1,8 +1,10 @@
 package com.arttttt.bettercalendarwidget.components.settings
 
+import com.arttttt.bettercalendarwidget.ui.base.ListItem
 import com.arttttt.core.arch.DecomposeComponent
 import com.arttttt.core.arch.content.ComponentContentOwner
 import com.arttttt.core.arch.context.AppComponentContext
+import kotlinx.coroutines.flow.StateFlow
 
 internal interface SettingsComponent : DecomposeComponent, ComponentContentOwner {
 
@@ -12,4 +14,10 @@ internal interface SettingsComponent : DecomposeComponent, ComponentContentOwner
             context: AppComponentContext,
         ): SettingsComponent
     }
+
+    data class UiState(
+        val items: List<ListItem>,
+    )
+
+    val uiStates: StateFlow<UiState>
 }

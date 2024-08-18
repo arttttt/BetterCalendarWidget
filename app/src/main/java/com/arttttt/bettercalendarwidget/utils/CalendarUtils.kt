@@ -51,7 +51,9 @@ fun ContentResolver.getCalendars(): List<Calendar> {
             this += Calendar(
                 id = id,
                 name = name,
+                accountName = accountName,
                 displayName = displayName,
+                color = color,
             )
         }
         cur?.close()

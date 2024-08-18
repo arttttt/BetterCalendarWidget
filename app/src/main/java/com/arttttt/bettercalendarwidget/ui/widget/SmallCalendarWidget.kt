@@ -15,6 +15,7 @@ import androidx.glance.layout.fillMaxHeight
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.text.Text
+import androidx.glance.text.TextStyle
 
 class SmallCalendarWidget : GlanceAppWidget() {
 
@@ -22,7 +23,9 @@ class SmallCalendarWidget : GlanceAppWidget() {
 
         provideContent {
             GlanceTheme {
-                Scaffold {
+                Scaffold(
+                    backgroundColor = GlanceTheme.colors.surface,
+                ) {
                     Row(
                         modifier = GlanceModifier
                             .fillMaxSize()
@@ -36,17 +39,42 @@ class SmallCalendarWidget : GlanceAppWidget() {
                                 ),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
-                            Text(text = "Tue")
-                            Text("04")
-                            Text("Oct")
+                            Text(
+                                text = "Tue",
+                                style = TextStyle(
+                                    color = GlanceTheme.colors.onSurface,
+                                ),
+                            )
+                            Text(
+                                text = "04",
+                                style = TextStyle(
+                                    color = GlanceTheme.colors.onSurface,
+                                ),
+                            )
+                            Text(
+                                text = "Oct",
+                                style = TextStyle(
+                                    color = GlanceTheme.colors.onSurface,
+                                ),
+                            )
                         }
 
                         Column(
                             modifier = GlanceModifier.fillMaxHeight(),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
-                            Text("Calendar event title")
-                            Text("Calendar event details")
+                            Text(
+                                text = "Calendar event title",
+                                style = TextStyle(
+                                    color = GlanceTheme.colors.onSurface,
+                                ),
+                            )
+                            Text(
+                                text = "Calendar event details",
+                                style = TextStyle(
+                                    color = GlanceTheme.colors.onSurface,
+                                ),
+                            )
                         }
                     }
                 }
