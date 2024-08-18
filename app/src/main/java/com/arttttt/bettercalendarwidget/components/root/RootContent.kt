@@ -6,7 +6,7 @@ import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arttttt.core.arch.content.ComponentContent
 import com.arttttt.core.arch.content.ComponentContentOwner
 
-class RootContent(
+internal class RootContent(
     private val component: RootComponent,
 ) : ComponentContent {
 
@@ -16,7 +16,7 @@ class RootContent(
             stack = component.stack
         ) { child ->
             when (val instance = child.instance) {
-                is ComponentContentOwner -> instance.content.Content(Modifier)
+                is ComponentContentOwner -> instance.content.Content(modifier)
             }
         }
     }
