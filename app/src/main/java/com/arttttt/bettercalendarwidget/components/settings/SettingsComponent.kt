@@ -15,9 +15,9 @@ internal interface SettingsComponent : DecomposeComponent, ComponentContentOwner
         ): SettingsComponent
     }
 
-    data class UiState(
+    data class UIState(
         val items: List<ListItem>,
     )
 
-    val uiStates: StateFlow<UiState>
+    val uiStates: StateFlow<UIState>
 }

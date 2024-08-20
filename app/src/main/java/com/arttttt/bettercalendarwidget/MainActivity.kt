@@ -10,7 +10,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.defaultComponentContext
+import com.arttttt.bettercalendarwidget.domain.store.CalendarsStore
 import com.arttttt.bettercalendarwidget.ui.theme.BetterCalendarWidgetTheme
+import com.arttttt.bettercalendarwidget.utils.appDaggerComponent
 import com.arttttt.core.arch.context.wrapComponentContext
 
 class MainActivity : ComponentActivity() {
@@ -21,9 +23,12 @@ class MainActivity : ComponentActivity() {
             statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
         )
 
-        val rootComponent = DaggerMainDaggerComponent
-            .factory()
-            .create()
+        /**
+         * todo: remove later
+         */
+        appDaggerComponent.calendarsStore.accept(CalendarsStore.Intent.LoadCalendars)
+
+        val rootComponent = appDaggerComponent
             .rootComponentFactory
             .create(
                 context = wrapComponentContext(

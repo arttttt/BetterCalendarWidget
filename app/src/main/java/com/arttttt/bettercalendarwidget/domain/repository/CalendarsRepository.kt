@@ -2,7 +2,7 @@ package com.arttttt.bettercalendarwidget.domain.repository
 
 import com.arttttt.bettercalendarwidget.domain.entity.Calendar
 
-interface CalendarRepository {
+interface CalendarsRepository {
 
-    suspend fun getCalendars(): List<Calendar>
+    suspend fun getCalendars(): Result<List<Calendar>>
 }
