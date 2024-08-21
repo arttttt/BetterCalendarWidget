@@ -1,5 +1,7 @@
 package com.arttttt.bettercalendarwidget.components.settings.ui
 
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -52,9 +55,11 @@ internal class SettingsContent(
                     when (item) {
                         is CalendarListItem -> CalendarItemContent(
                             modifier = Modifier
+                                .background(MaterialTheme.colorScheme.background)
                                 .fillParentMaxWidth()
                                 .padding(8.dp),
                             item = item,
+                            onHideCalendar = component::onHideCalendar,
                         )
                     }
                 }

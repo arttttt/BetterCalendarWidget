@@ -40,6 +40,10 @@ internal class SettingsComponentImpl @AssistedInject constructor(
             initialValue = calendarsStore.state.toUIState(),
         )
 
+    override fun onHideCalendar(id: Long) {
+        calendarsStore.accept(CalendarsStore.Intent.HideCalendar(id))
+    }
+
     private fun CalendarsStore.State.toUIState(): SettingsComponent.UIState {
         return SettingsComponent.UIState(
             items = calendars.map { calendar ->

@@ -15,6 +15,7 @@ interface CalendarsStore : Store<CalendarsStore.Intent, CalendarsStore.State, Ca
     sealed interface Intent {
 
         data object LoadCalendars : Intent
+        data class HideCalendar(val id: Long) : Intent
     }
 
     sealed interface Message {

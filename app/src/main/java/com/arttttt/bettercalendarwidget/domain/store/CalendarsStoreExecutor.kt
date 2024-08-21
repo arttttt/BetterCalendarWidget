@@ -15,6 +15,7 @@ class CalendarsStoreExecutor(
     override fun executeIntent(intent: CalendarsStore.Intent) {
         when (intent) {
             is CalendarsStore.Intent.LoadCalendars -> loadCalendars()
+            is CalendarsStore.Intent.HideCalendar -> hideCalendar(intent.id)
         }
     }
 
@@ -34,5 +35,18 @@ class CalendarsStoreExecutor(
             .invokeOnCompletion {
                 dispatch(CalendarsStore.Message.ProgressFinished)
             }
+    }
+
+    /**
+     * it filters in-memory cache only
+     *
+     * todo: make it persistent
+     */
+    private fun hideCalendar(id: Long) {
+        dispatch(
+            CalendarsStore.Message.CalendarsLoaded(
+                state().calendars.filter { it.id != id }
+            )
+        )
     }
 }

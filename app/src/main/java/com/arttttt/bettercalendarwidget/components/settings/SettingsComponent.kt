@@ -20,4 +20,6 @@ internal interface SettingsComponent : DecomposeComponent, ComponentContentOwner
     )
 
     val uiStates: StateFlow<UIState>
+
+    fun onHideCalendar(id: Long)
 }
