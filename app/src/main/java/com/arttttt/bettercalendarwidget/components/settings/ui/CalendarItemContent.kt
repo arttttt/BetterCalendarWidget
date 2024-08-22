@@ -1,6 +1,7 @@
 package com.arttttt.bettercalendarwidget.components.settings.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -46,7 +47,15 @@ internal fun CalendarItemContent(
             Row(
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxHeight(),
+                    .fillMaxHeight()
+                    .clickable(
+                        interactionSource = null,
+                        indication = null,
+                    ) {
+                        coroutineScope.launch {
+                            swipeToDismissBoxState.reset()
+                        }
+                    },
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End),
             ) {
