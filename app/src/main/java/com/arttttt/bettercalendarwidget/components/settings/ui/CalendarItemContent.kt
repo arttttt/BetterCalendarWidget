@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
@@ -36,6 +37,7 @@ internal fun CalendarItemContent(
     modifier: Modifier,
     item: CalendarListItem,
     onHideCalendar: (Long) -> Unit,
+    onCalendarClicked: (Long) -> Unit,
 ) {
     val coroutineScope = rememberCoroutineScope()
     val swipeToDismissBoxState = rememberSwipeToDismissBoxState()
@@ -91,7 +93,14 @@ internal fun CalendarItemContent(
         }
     ) {
         Row(
-            modifier = modifier.height(IntrinsicSize.Min),
+            modifier = Modifier
+                .clickable(
+                    onClick = {
+                        onCalendarClicked.invoke(item.id)
+                    }
+                )
+                .height(IntrinsicSize.Min)
+                .then(modifier),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -105,7 +114,11 @@ internal fun CalendarItemContent(
             )
 
             Column(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(
+                        vertical = 4.dp
+                    ),
                 verticalArrangement = Arrangement.Center,
             ) {
                 Text(
@@ -148,6 +161,7 @@ private fun CalendarItemContentPreview() {
                     isChecked = true,
                 ),
                 onHideCalendar = {},
+                onCalendarClicked = {},
             )
         }
     }

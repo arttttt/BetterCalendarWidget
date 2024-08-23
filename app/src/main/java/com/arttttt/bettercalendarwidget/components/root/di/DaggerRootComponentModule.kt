@@ -1,5 +1,6 @@
 package com.arttttt.bettercalendarwidget.components.root.di
 
+import com.arttttt.bettercalendarwidget.components.calendar.di.DaggerCalendarComponentModule
 import com.arttttt.bettercalendarwidget.components.root.RootComponent
 import com.arttttt.bettercalendarwidget.components.root.RootComponentImpl
 import com.arttttt.bettercalendarwidget.components.settings.di.DaggerSettingsComponentModule
@@ -9,6 +10,7 @@ import dagger.Module
 @Module(
     includes = [
         DaggerSettingsComponentModule::class,
+        DaggerCalendarComponentModule::class,
     ]
 )
 internal abstract class DaggerRootComponentModule {

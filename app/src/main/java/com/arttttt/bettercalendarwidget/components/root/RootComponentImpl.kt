@@ -2,8 +2,10 @@ package com.arttttt.bettercalendarwidget.components.root
 
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
+import com.arkivanov.decompose.router.stack.bringToFront
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
+import com.arttttt.bettercalendarwidget.components.calendar.CalendarComponent
 import com.arttttt.bettercalendarwidget.components.settings.SettingsComponent
 import com.arttttt.core.arch.DecomposeComponent
 import com.arttttt.core.arch.content.ComponentContent
@@ -15,7 +17,8 @@ import kotlinx.serialization.Serializable
 
 internal class RootComponentImpl @AssistedInject constructor(
     @Assisted context: AppComponentContext,
-    private val settingsComponentFactory: SettingsComponent.Factory
+    private val settingsComponentFactory: SettingsComponent.Factory,
+    private val calendarComponentFactory: CalendarComponent.Factory,
 ) : RootComponent,
     AppComponentContext by context {
 
@@ -30,6 +33,9 @@ internal class RootComponentImpl @AssistedInject constructor(
 
         @Serializable
         data object Settings : Config
+
+        @Serializable
+        data class Calendar(val calendarId: Long) : Config
     }
 
     override val content: ComponentContent = RootContent(this)
@@ -49,7 +55,11 @@ internal class RootComponentImpl @AssistedInject constructor(
         context: AppComponentContext
     ): DecomposeComponent {
         return when (config) {
-            is Config.Settings -> settingsComponentFactory.create(context)
+            is Config.Settings -> settingsComponentFactory.create(
+                context = context,
+                onCalendarClicked = { calendarId -> navigation.bringToFront(Config.Calendar(calendarId)) },
+            )
+            is Config.Calendar -> calendarComponentFactory.create(config.calendarId, context)
         }
     }
 }

@@ -47,18 +47,19 @@ internal class SettingsContent(
                 modifier = Modifier
                     .padding(padding)
                     .fillMaxSize(),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                contentPadding = PaddingValues(
+                    vertical = 16.dp,
+                ),
             ) {
                 items(uiState.items) { item ->
                     when (item) {
                         is CalendarListItem -> CalendarItemContent(
                             modifier = Modifier
                                 .background(MaterialTheme.colorScheme.background)
-                                .fillParentMaxWidth()
-                                .padding(8.dp),
+                                .fillParentMaxWidth(),
                             item = item,
                             onHideCalendar = component::onHideCalendar,
+                            onCalendarClicked = component.onCalendarClicked,
                         )
                     }
                 }

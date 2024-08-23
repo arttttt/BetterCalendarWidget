@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.stateIn
 
 internal class SettingsComponentImpl @AssistedInject constructor(
     @Assisted context: AppComponentContext,
+    @Assisted override val onCalendarClicked: (Long) -> Unit,
     private val calendarsStore: CalendarsStore,
 ) : SettingsComponent,
     AppComponentContext by context {
@@ -24,7 +25,10 @@ internal class SettingsComponentImpl @AssistedInject constructor(
     @AssistedFactory
     interface Factory : SettingsComponent.Factory {
 
-        override fun create(context: AppComponentContext): SettingsComponentImpl
+        override fun create(
+            context: AppComponentContext,
+            onCalendarClicked: (Long) -> Unit,
+        ): SettingsComponentImpl
     }
 
     private val coroutineScope = coroutineScope()
