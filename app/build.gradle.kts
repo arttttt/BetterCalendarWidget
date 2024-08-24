@@ -76,4 +76,6 @@ dependencies {
     implementation(libs.arkivanov.mviKotlin.timetravel)
 
     implementation(libs.kotlin.serialization.json)
+
+    implementation(libs.kotlin.datetime)
 }
