@@ -21,5 +21,7 @@ internal interface CalendarComponent : DecomposeComponent, ComponentContentOwner
         val items: List<ListItem>,
     )
 
+    val calendarId: Long
+
     val uiStates: StateFlow<UIState>
 }

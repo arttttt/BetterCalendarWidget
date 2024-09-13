@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.defaultComponentContext
-import com.arttttt.bettercalendarwidget.domain.store.CalendarsStore
 import com.arttttt.bettercalendarwidget.ui.theme.BetterCalendarWidgetTheme
 import com.arttttt.bettercalendarwidget.utils.appDaggerComponent
 import com.arttttt.core.arch.context.wrapComponentContext
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
         /**
          * todo: remove later
          */
-        appDaggerComponent.calendarsStore.accept(CalendarsStore.Intent.LoadCalendars)
+        appDaggerComponent.calendarsStore.init()
 
         val rootComponent = appDaggerComponent
             .rootComponentFactory

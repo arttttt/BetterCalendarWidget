@@ -9,7 +9,7 @@ import dagger.assisted.AssistedInject
 import kotlinx.coroutines.flow.StateFlow
 
 internal class CalendarComponentImpl @AssistedInject constructor(
-    @Assisted calendarId: Long,
+    @Assisted override val calendarId: Long,
     @Assisted context: AppComponentContext,
 ) : CalendarComponent,
     AppComponentContext by context {

@@ -2,12 +2,12 @@ package com.arttttt.bettercalendarwidget.components.settings
 
 import androidx.compose.ui.graphics.Color
 import com.arkivanov.essenty.lifecycle.coroutines.coroutineScope
-import com.arkivanov.mvikotlin.extensions.coroutines.states
 import com.arttttt.bettercalendarwidget.components.settings.ui.CalendarListItem
 import com.arttttt.bettercalendarwidget.components.settings.ui.SettingsContent
 import com.arttttt.bettercalendarwidget.domain.store.CalendarsStore
 import com.arttttt.core.arch.content.ComponentContent
 import com.arttttt.core.arch.context.AppComponentContext
+import com.arttttt.simplemvi.utils.state
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
