@@ -69,11 +69,6 @@ dependencies {
     implementation(libs.arkivanov.essenty.backHandler)
     implementation(libs.arkivanov.essenty.stateKeeper)
     implementation(libs.arkivanov.essenty.instanceKeeper)
-    implementation(libs.arkivanov.mviKotlin.core)
-    implementation(libs.arkivanov.mviKotlin.coroutines)
-    implementation(libs.arkivanov.mviKotlin.main)
-    implementation(libs.arkivanov.mviKotlin.logging)
-    implementation(libs.arkivanov.mviKotlin.timetravel)
 
     implementation(libs.kotlin.serialization.json)
 

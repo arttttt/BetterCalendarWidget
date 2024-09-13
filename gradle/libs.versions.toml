@@ -1,18 +1,17 @@
 [versions]
-agp = "8.7.0-alpha07"
+agp = "8.6.0"
 kotlin = "2.0.20-RC2"
 coreKtx = "1.13.1"
-lifecycleRuntimeKtx = "2.8.4"
-activityCompose = "1.9.1"
-composeBom = "2024.08.00"
+lifecycleRuntimeKtx = "2.8.5"
+activityCompose = "1.9.2"
+composeBom = "2024.09.01"
 glance = "1.1.0"
 dagger2 = "2.52"
 essenty = "2.1.0"
-mviKotlin = "4.1.0"
 coroutines = "1.9.0-RC.2"
 decompose = "3.2.0-alpha04"
 atomicfu = "0.25.0"
-kotlinSerialization = "1.7.1"
+kotlinSerialization = "1.7.2"
 datetime = "0.6.1"
 
 [libraries]
@@ -34,11 +33,6 @@ arkivanov-essenty-lifecycle-coroutines = { group = "com.arkivanov.essenty", name
 arkivanov-essenty-stateKeeper = { group = "com.arkivanov.essenty", name = "state-keeper", version.ref = "essenty" }
 arkivanov-essenty-instanceKeeper = { group = "com.arkivanov.essenty", name = "instance-keeper", version.ref = "essenty" }
 arkivanov-essenty-backHandler = { group = "com.arkivanov.essenty", name = "back-handler", version.ref = "essenty" }
-arkivanov-mviKotlin-core = { group = "com.arkivanov.mvikotlin", name = "mvikotlin", version.ref = "mviKotlin" }
-arkivanov-mviKotlin-main = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-main", version.ref = "mviKotlin" }
-arkivanov-mviKotlin-logging = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-logging", version.ref = "mviKotlin" }
-arkivanov-mviKotlin-timetravel = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-timetravel", version.ref = "mviKotlin" }
-arkivanov-mviKotlin-coroutines = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-extensions-coroutines", version.ref = "mviKotlin" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 arkivanov-decompose-lib = { group ="com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }

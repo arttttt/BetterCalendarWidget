@@ -43,11 +43,7 @@ dependencies {
     api(libs.arkivanov.essenty.instanceKeeper)
     api(libs.arkivanov.essenty.stateKeeper)
 
-    api(libs.arkivanov.mviKotlin.core)
-    api(libs.arkivanov.mviKotlin.main)
-    api(libs.arkivanov.mviKotlin.logging)
-    api(libs.arkivanov.mviKotlin.timetravel)
-    api(libs.arkivanov.mviKotlin.coroutines)
+    api(files("libs/simplemvi-debug.aar"))
 
     api(libs.kotlin.coroutines.core)
 
