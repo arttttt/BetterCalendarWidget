@@ -1,6 +1,6 @@
 [versions]
 agp = "8.6.0"
-kotlin = "2.0.20-RC2"
+kotlin = "2.0.20"
 coreKtx = "1.13.1"
 lifecycleRuntimeKtx = "2.8.5"
 activityCompose = "1.9.2"
@@ -13,6 +13,7 @@ decompose = "3.2.0-alpha04"
 atomicfu = "0.25.0"
 kotlinSerialization = "1.7.2"
 datetime = "0.6.1"
+simplemvi = "0.0.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,6 +41,9 @@ arkivanov-decompose-compose = { group ="com.arkivanov.decompose", name = "extens
 kotlin-atomicfu = { module ="org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu" }
 kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
+arttttt-simplemvi-lib = { module = "io.github.arttttt.simplemvi:simplemvi", version.ref = "simplemvi" }
+arttttt-simplemvi-logging = { module = "io.github.arttttt.simplemvi:simplemvi-logging", version.ref = "simplemvi" }
+arttttt-simplemvi-viewmodel = { module = "io.github.arttttt.simplemvi:simplemvi-viewmodel", version.ref = "simplemvi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

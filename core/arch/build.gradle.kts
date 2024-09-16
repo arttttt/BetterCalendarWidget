@@ -43,7 +43,9 @@ dependencies {
     api(libs.arkivanov.essenty.instanceKeeper)
     api(libs.arkivanov.essenty.stateKeeper)
 
-    api(files("libs/simplemvi-debug.aar"))
+    api(libs.arttttt.simplemvi.lib)
+    api(libs.arttttt.simplemvi.logging)
+    api(libs.arttttt.simplemvi.viewmodel)
 
     api(libs.kotlin.coroutines.core)
 

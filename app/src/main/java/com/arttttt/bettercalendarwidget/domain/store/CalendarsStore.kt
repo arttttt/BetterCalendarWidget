@@ -3,10 +3,10 @@ package com.arttttt.bettercalendarwidget.domain.store
 import com.arttttt.bettercalendarwidget.domain.entity.Calendar
 import com.arttttt.bettercalendarwidget.domain.repository.CalendarsRepository
 import com.arttttt.bettercalendarwidget.utils.DefaultLogger
+import com.arttttt.simplemvi.logging.loggingActor
 import com.arttttt.simplemvi.store.Store
 import com.arttttt.simplemvi.utils.actorDsl
 import com.arttttt.simplemvi.utils.createStore
-import com.arttttt.simplemvi.utils.loggingActor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ class CalendarsStore(
             coroutineContext = Dispatchers.Main.immediate,
         ) {
             onIntent<Intent.LoadCalendars> {
-                if (getState().isInProgress) return@onIntent
+                if (state.isInProgress) return@onIntent
 
                 launch {
                     reduce { state ->
@@ -52,6 +52,7 @@ class CalendarsStore(
                         }
                     }
             }
+
             onIntent<Intent.HideCalendar> { intent ->
                 reduce { state ->
                     state.copy(

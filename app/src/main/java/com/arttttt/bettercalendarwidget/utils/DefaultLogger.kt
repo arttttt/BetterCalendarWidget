@@ -1,7 +1,7 @@
 package com.arttttt.bettercalendarwidget.utils
 
 import android.util.Log
-import com.arttttt.simplemvi.logger.Logger
+import com.arttttt.simplemvi.logging.logger.Logger
 
 object DefaultLogger : Logger {
 
